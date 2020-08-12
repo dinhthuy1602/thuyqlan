@@ -1,0 +1,59 @@
+<div class="page-sidebar navbar-collapse collapse"
+	ng-controller="MenuController as vm">
+	<ul class="page-sidebar-menu" data-keep-expanded="false"
+		data-auto-scroll="true" data-slide-speed="200"
+		ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+		<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+		<li class="sidebar-search-wrapper">
+			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM --> <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+			<!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+			<form class="sidebar-search" action="#" method="POST">
+				<a href="javascript:;" class="remove"> <i class="icon-close"></i>
+				</a>
+				<div class="input-group">
+					<input type="text" ng-model="vm.searchText" class="form-control"
+						placeholder="Search..." /> <span class="input-group-btn">
+						<a href="javascript:;"> <i class="icon-magnifier"></i>
+					</a>
+					</span>
+				</div>
+			</form> <!-- END RESPONSIVE QUICK SEARCH FORM -->
+		</li>
+		<li class="start nav-item"><a href="javascript:;"
+			ng-click="vm.goTo('DASH_BOARD')"> <!-- ng-click="vm.goTo('DASH_BOARD')" -->
+				<i class="icon-home"></i> <span class="title" translate>Trang
+					chủ</span> <span class="selected"></span>
+		</a></li>
+
+		<!-- Vsa -->
+		<li class="nav-item" ng-repeat="parentMenu in vm.menuObjects"
+			><a
+			href="javascript:;" ng-show="parentMenu.listChildObject.length>0"
+			class="nav-link nav-toggle">
+				<div class="dmgl">&nbsp;&nbsp;&nbsp;&nbsp;</div> <span class="title"
+				ng-bind="parentMenu.objectName"></span> <span
+				class="arrow"></span>
+		</a> <a href="javascript:;" ng-show="parentMenu.listChildObject.length==0"
+			ng-click="vm.goTo(parentMenu.objectUrl)" class="nav-link nav-toggle">
+				<i class="fa fa-circle" aria-hidden="true"></i>
+				<p class="title font-weight-menu">
+					<span ng-bind="vm.getMenuText(parentMenu)"></span>
+				</p>
+		</a>
+			<ul class="sub-menu" ng-if="parentMenu.listChildObject.length>0">
+				<li ng-repeat="childObject in parentMenu.listChildObject"
+					ng-class="childObject.listChildObject.length>0?'nav-item':''">
+					<!--   Nếu không có con hiển thị menu --> <a href="javascript:;"
+					ng-click="vm.goTo(childObject.objectUrl)"> <i
+						class="fa fa-circle" aria-hidden="true"></i>
+						<p class="title">
+							<span ng-bind="vm.getMenuText(childObject)"></span>
+						</p>
+				</a> 
+
+				</li>
+			</ul></li>
+
+	</ul>
+	<!-- END SIDEBAR MENU -->
+</div>

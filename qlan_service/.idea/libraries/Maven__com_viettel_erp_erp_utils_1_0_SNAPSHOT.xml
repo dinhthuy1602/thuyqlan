@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.viettel.erp:erp-utils:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/erp/erp-utils/1.0-SNAPSHOT/erp-utils-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/erp/erp-utils/1.0-SNAPSHOT/erp-utils-1.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/erp/erp-utils/1.0-SNAPSHOT/erp-utils-1.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,41 @@
+<div >
+ <!-- END PAGE SPINNER -->
+        <!-- BEGIN HEADER -->
+        <div data-ng-include="'/qlan-web/tpl/header.html'" data-ng-controller="HeaderController" class="page-header navbar navbar-fixed-top"> </div>
+        <!-- END HEADER -->
+        <div class="clearfix"> </div>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div data-ng-include="'/qlan-web/tpl/sidebar.html'" data-ng-controller="SidebarController" class="page-sidebar-wrapper"> </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper" ng-controller="MainTabController as vm">
+                <div class="page-content">
+                    <!-- BEGIN ACTUAL CONTENT -->
+                   <div class="wrapper-content-tabs" >
+						<scrollable-tabset tooltip-left-placement="top" api="vm.scrlTabsApi" scroll-by="250">
+						    <uib-tabset class="head-action wrapper-tabs">
+						      <uib-tab ng-repeat="tab in tabs" active="tab.active">
+						        <uib-tab-heading><span title="{{tab.title}}">{{tab.title}}</span> <a ng-click="vm.removeTab($event, $index)" ng-show="tab.closable" href=''><button class="badge close" type="button" title="Remove this page">x</button></a></uib-tab-heading>
+						        <div ng-include src='tab.templateUrl' syna-pause-watchers="!tab.active"></div>
+						      </uib-tab>
+						    </uib-tabset>
+					  </scrollable-tabset>
+					</div>
+                    <!-- END ACTUAL CONTENT -->
+                </div>
+            </div>
+            <!-- END CONTENT -->\
+            <!-- BEGIN QUICK SIDEBAR -->
+            <a href="javascript:;" class="page-quick-sidebar-toggler">
+                <i class="icon-login"></i>
+            </a>
+            <div data-ng-include="'/qlan-web/tpl/quick-sidebar.html'" data-ng-controller="QuickSidebarController" class="page-quick-sidebar-wrapper"></div>
+            <!-- END QUICK SIDEBAR -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div data-ng-include="'/qlan-web/tpl/footer.html'" data-ng-controller="FooterController" class="page-footer"> </div>
+        <!-- END FOOTER -->
+</div>

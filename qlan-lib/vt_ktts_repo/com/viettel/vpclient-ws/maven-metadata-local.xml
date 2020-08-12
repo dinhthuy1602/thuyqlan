@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.viettel</groupId>
+  <artifactId>vpclient-ws</artifactId>
+  <versioning>
+    <release>4.1</release>
+    <versions>
+      <version>4.1</version>
+    </versions>
+    <lastUpdated>20161221094548</lastUpdated>
+  </versioning>
+</metadata>

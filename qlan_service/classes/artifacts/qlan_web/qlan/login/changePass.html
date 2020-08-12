@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+	margin: 0;
+	color: #6a6f8c;
+	background: #c8c8c8;
+	font: 600 16px/18px;
+}
+</style>
+
+<div class="changepass-wrap" ng-app="MetronicApp"
+	ng-controller="ChangePasswordController as vm"
+	kendo-validator="vm.validator" k-options="vm.validatorOptions">
+	<div class="changepass-html">
+			<label class="label-header">{{'changepass.form.title'|translate}}</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="username" class="label">{{'changepass.lbl.username'|translate}}</label> <input
+						class="input" type="text" required autofocus
+						data-required-msg="Tên đăng nhập không được để trống"
+						id="username" name="username" ng-model="vm.userLogin.username" />
+					<span data-for="username" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<label for="passwordOld" class="label">{{'changepass.lbl.passwordOld'|translate}}</label> <input
+						class="input" type="password" required
+						data-required-msg="Mật khẩu hiện tại không được để trống" id="passwordOld" 
+						name="passwordOld" ng-model="vm.userLogin.passwordOld" /> <span
+						data-for="passwordOld" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<label for="password" class="label">{{'changepass.lbl.password'|translate}}</label> <input
+						class="input" type="password" required
+						data-required-msg="Mật khẩu mới không được để trống" id="password" pass-word
+						name="password" ng-model="vm.userLogin.password" /> <span
+						data-for="password" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<label for="passwordConfirm" class="label">{{'changepass.lbl.passwordConfirm'|translate}}</label> <input
+						class="input" type="password" required
+						data-required-msg="Bạn phải nhập lại mật khẩu" id="passwordConfirm" pass-word-confirm new-pass="password"
+						name="passwordConfirm" ng-model="vm.userLogin.passwordConfirm" /> <span
+						data-for="passwordConfirm" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="{{'changepass.btn.submit'|translate}}"
+						ng-click="vm.changePassSubmit()" translate> <input type="button"
+						class="button" value="{{'changepass.btn.reset'|translate}}" ng-click="vm.clear()" translate>
+				</div>
+			</div>
+
+		</div>
+		
+		</div>
+	</div>

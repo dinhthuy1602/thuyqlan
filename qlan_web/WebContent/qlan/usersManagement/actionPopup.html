@@ -1,0 +1,38 @@
+<div>
+	<div class="portlet light clearfix">
+		<div class="portlet-title col-md-12">
+			<div class="caption col-md-4">
+				<span class="caption-subject bold lowercase" translate>Tên người dùng: </span><label style="color: cornflowerblue;" ng-bind="caller.dataRole.userName"></label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="portlet light clearfix">
+	<div class="portlet-title col-md-12">
+		<div class="caption col-md-4">
+			<span class="caption-subject bold lowercase" translate>Danh sách quyền đã được gán</span>
+		</div>
+		<div class="form-group col-md-6">
+			<label class="col-md-4 control-label" translate>Bổ sung nhóm quyền</label>
+			<div class="col-md-8 margin_top">
+				<input kendo-auto-complete k-options="caller.rolesOptions"
+					id="usermanagement_roles"
+					header-template="caller.headerTemplateStock"
+					ng-model="caller.roleSearch.name" class="form-control width100"
+				
+					name="name" />
+			</div>
+		</div>
+
+	</div>
+</div>
+<div id="actionPopupGridUsers" kendo-grid="caller.actionPopupGrid"
+	k-editable="false" k-options="caller.actionPopupGridOptions"></div>
+<div class="portlet light" align="right">
+<button type="button" class="btn btn-qlk padding-search-right saveQLK"
+		ng-click="caller.insertUserRoleData()" translate>Ghi lại</button>
+	<button type="button" class="btn btn-qlk padding-search-right closeQLK"
+		id="cancel" ng-click="cancel()" translate>Hủy bỏ</button>
+	
+</div>

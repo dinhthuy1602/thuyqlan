@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="qlan-web">
+    <output-path>$PROJECT_DIR$/classes/artifacts/qlan_web</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="qlan_web/web/Web" />
+    </root>
+  </artifact>
+</component>

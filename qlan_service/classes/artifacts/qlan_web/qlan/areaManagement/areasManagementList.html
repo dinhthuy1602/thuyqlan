@@ -1,0 +1,142 @@
+<div data-ng-controller="areasManagementController as vm" style="width: 100%; display: flex">
+    <!-- cây đơn vị  -->
+    <div style="width: 18%;border: 3px #33cccc solid;">
+        <div class="portlet-title background-title" style="position: relative;height: 28px">
+            <div class="caption" style="position: absolute; top: 50%;transform: translateY(-50%);">
+                <span class="caption-subject bold lowercase" translate>
+                    Cây đơn vị</span>
+            </div>
+            <div class="text-right margin-row-title" style="position: absolute;right: 0;">
+                <i data-toggle="collapse" data-target="#treeview"
+                   class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div id="treeview" class="collapse in"
+             style="text-align: left; color: black;font-weight:Bold;"
+             kendo-tree-view="vm.treeView"
+             k-options="vm.treeViewOptions"
+             k-on-change="vm.onChangeTree(dataItem)"
+             k-on-change="vm.onGridChange(kendoEvent, { selected: selected }, data)">
+        </div>
+    </div>
+
+    <div style="width: 82%">
+        <div ng-show="vm.showSearch">
+            <form class="form-horizontal row" role="form">
+                <div class="form-body">
+                    <div class="portlet light bordered">
+                        <div class="portlet-title background-title">
+                            <div class="caption">
+							<span class="caption-subject bold lowercase" translate>
+                                Thông tin tìm kiếm</span>
+                            </div>
+                            <div class="text-right margin-row-title">
+                                <i data-toggle="collapse" data-target="#demoareasManagement"
+                                   class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div id="demoareasManagement" class="collapse in from-search">
+                            <div class="clearfix">
+                                <div class="form-group col-md-6">
+                                    <label class="col-md-4 control-label" translate>Mã Đơn vị</label>
+                                    <div class="col-md-8">
+                                        <input class=" form-control width100" type="text" autofocus
+                                               ng-model="vm.areasManagementSearch.areaCode"/>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="col-md-4 control-label" translate>Tên đơn vị</label>
+                                    <div class="col-md-8">
+                                        <input class=" form-control width100" type="text"
+                                               ng-model="vm.areasManagementSearch.areaName"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="form-group col-md-6">
+                                    <label class="col-md-4 control-label" translate>
+                                        Trạng thái
+                                    </label>
+                                    <div class="col-md-8">
+                                        <select kendo-drop-down-list="applySelect" class="form-control"
+                                                k-options="vm.statusSelectOptions"
+                                                id="areamanagement_search_status" style="width: 100%"
+                                                name="areamanagement_search_status"
+                                                ng-model="vm.areasManagementSearch.status">
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="clearfix form-actions margin-top">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" id="findParam1" ng-click="vm.add()"
+                                                class="btn btn-qlk padding-search-right addQLK" translate>
+                                            Thêm Mới
+                                        </button>
+                                        <button type="button" id="findParam" ng-click="vm.doSearch()"
+                                                class="btn btn-qlk padding-search-right searchQLK" translate>
+                                            Tìm kiếm
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--        Html phan danh sach don vi cha-->
+        <div class="portlet light bordered">
+            <div class="portlet-title background-title">
+                <div class="caption">
+                    <span class="caption-subject bold lowercase" translate>Danh sách đơn vị cha: </span>&nbsp;
+                    <label class="control-label bold lowercase" ng-bind="vm.count"></label>
+                    <label class="control-label bold lowercase">&nbsp;bản ghi</label>
+                </div>
+                <div class="text-right margin-row-title">
+                    <i data-toggle="collapse" data-target="#demoareasManagementGrid"
+                       class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div id="demoareasManagementGrid" class="collapse in">
+                <div class="margin_top_button"></div>
+                <div
+                        id="areasManagementGrid"
+                        kendo-grid="vm.areasManagementGrid"
+                        k-editable="false"
+                        k-options="vm.gridOptions"
+                        k-on-change="vm.onGridChange(kendoEvent, { selected: selected }, data)"></div>
+            </div>
+        </div>
+
+        <!--        Html phan truc thuoc don vi truc thuoc-->
+
+        <div class="portlet light bordered">
+            <div class="portlet-title background-title">
+                <div class="caption">
+                    <span class="caption-subject bold lowercase" translate>Danh sách đơn vị trực thuộc đơn vị: </span>&nbsp;
+                    <label class="control-label bold lowercase" ng-bind="vm.countTT"></label>
+                    <label class="control-label bold lowercase">&nbsp; bản ghi</label>
+                </div>
+                <div class="text-right margin-row-title">
+                    <i data-toggle="collapse" data-target="#demoareasTTManagementGrid"
+                       class="fa fa-chevron-circle-up" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div id="demoareasTTManagementGrid" class="collapse in">
+                <div class="margin_top_button"></div>
+                <div id="areasTTManagementGrid"
+                     kendo-grid="vm.areasTTManagementGrid"
+                     k-editable="false"
+                     k-options="vm.gridOptionsTT"
+                     k-on-change="vm.onGridChange(kendoEvent, { selected: selected }, data)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

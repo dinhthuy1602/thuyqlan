@@ -1,0 +1,4 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Mon Dec 05 09:56:51 ICT 2016
+default-http\://repo.maven.apache.org/maven2/.lastUpdated=1480906611671
+http\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.codehaus.jackson\:jackson-mapper-asl\:pom\:{jackson.version} from/to central (http\://repo.maven.apache.org/maven2)\: Illegal character in path at index 76\: http\://repo.maven.apache.org/maven2/org/codehaus/jackson/jackson-mapper-asl/{jackson.version}/jackson-mapper-asl-{jackson.version}.pom

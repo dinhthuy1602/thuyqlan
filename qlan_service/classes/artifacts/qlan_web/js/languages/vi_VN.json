@@ -1,0 +1,63 @@
+{
+	"common":{
+		"title":{
+			"detail":"Chi tiết"
+		}
+	}
+	,
+	"home":{
+		"title":"Hệ thống quản lý an ninh "
+	},
+	"HCQT":{
+		"XEM_HO_SO":"View Document"
+	},
+	"error.not.has.handoverOfAsset": "Chưa bàn giao tài sản",
+	"undeploy":"( Chưa triển khai )",
+	"TSCD":{
+		"lbl_DVQL":"Đơn vị quản lý"
+	}	
+	,
+	"kendo":{
+		"message":{
+			"spacecharacter" : "Mã chức năng không có khoảng trống",
+			"objectvietnamesecheck" : "Trường bạn nhập phải không có dấu",
+			"objecthtmlcheck": "Không nhập thẻ HTML",
+			"objSpecialCharacterCode": "Không nhập tiếng việt có dấu",
+			"HtmlCheck": "Ký tự không hợp lệ",
+			"ObjectHtmlCheckObjCode": "Không nhập thẻ HTML",
+			"validObjectCodeMaxLength": "Không nhập quá 100 ký tự",
+			"validPassWord":"Mật khẩu phải lớn hơn 8 ký tự chứa chữ hoa, chữ thường, số và ký tự đặc biệt!",
+			"validPassWordConfirm":"Mật khẩu nhập lại phải giống mật khẩu mới!",
+			"validEmail":"Email không đúng định đạng",
+			"validPhoneNumber":"Số điện thoại không đúng định dạng!",
+			"specialCharacterCode":"Trường bạn nhập phải không dấu và không được chứa các ký tự đặc biệt",
+			"specialCharacter":"Trường bạn nhập không được chứa các ký tự đặc biệt",
+			"validateNumber":"Trường bạn nhập không đúng kiểu số nguyên",
+			"hasWhiteSpace":"Trường bạn nhập không được chứa khoảng trắng",
+			"ipRegex":"Địa chỉ IP không đúng định dạng",
+			"dateNow":"Phải nhập ngày nhở hơn ngày hiện tại",
+			"dateDiffYear":"Năm sinh phải lơn hơn hiện tại 18 năm"
+			
+		}
+	},
+	"login":{
+		"form.title":"Đăng nhập tài khoản",
+		"lbl.username":"Tên đăng nhập",
+		"lbl.password":"Mật khẩu",
+		"lbl.rememberme":"Nhăc tôi vào lần đăng nhập tiếp theo",
+		"btn.login":"Đăng nhập",
+		"btn.reset":"Nhập lại",
+		"link.changepass":"Đổi mật khẩu"
+	},
+	"changepass":{
+		"form.title":"Đổi mật khẩu",
+		"lbl.username":"Tên đăng nhập",
+		"lbl.password":"Mật khẩu mới",
+		"lbl.passwordOld":"Mật khẩu hiện tại",
+		"lbl.passwordConfirm":"Nhập lại mật khẩu",
+		"btn.submit":"Đổi mật khẩu",
+		"btn.reset":"Nhập lại",
+		"message.success":"Đổi mật khẩu thành công",
+		"message.error":"Đổi mật khẩu thất bại"
+	}
+}

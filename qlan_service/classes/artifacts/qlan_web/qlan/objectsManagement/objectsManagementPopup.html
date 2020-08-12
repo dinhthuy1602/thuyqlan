@@ -1,0 +1,134 @@
+<form class="form-horizontal row" role="form" name="objectsManagement" id="objectsManagement" kendo-validator="validator" k-options="validatorOptions">
+	<p></p>
+	<div class="portlet-title">
+		<div class="caption">
+			<span class="caption-subject bold lowercase" translate>Thông tin chung</span>
+		</div>
+	</div>
+	<div class="portlet light bordered">
+		<p></p>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Mã chức năng</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text" required
+						   data-required-msg="Mã chức năng không được để trống" ng-disabled="!caller.isCreateNew"
+						   id="creater_objectCode" name="creater_objectCode"
+						   space-character
+						   data-inputMaxtextlength="100" input-max-textLength
+						   data-inputMaxtextlength-msg="Không nhập quá 100 ký tự" object-htmlcheck
+						   ng-model="caller.objectsManagementCreate.objectCode"
+						   special-character-code/>
+					<span data-for="creater_objectCode" class="k-invalid-msg"></span>
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Tên chức năng</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text" required
+						   id="creater_objectName"
+						   name="creater_objectName"
+						   data-inputMaxtextlength="300" input-max-textLength
+						   data-required-msg="Tên chức năng không được để trống"
+						   data-inputMaxtextlength-msg="Không nhập quá 300 ký tự"
+						   object-htmlcheck
+						   ng-model="caller.objectsManagementCreate.objectName"/>
+					<span data-for="creater_objectName" class="k-invalid-msg"></span>
+				</div>
+			</div>
+
+		</div>
+		<div class="clearfix">
+				<auto-search model-label="Chức năng cha" caller="caller"
+							 header-template="caller.headerTemplate" template-auto="caller.template"
+							 page="1" page-size="20" popup-type="grid"
+							 combo-id="objects_management_create_parent"
+							 combo-source-link="objectsService/objects/autoSearchPopup"
+							 combo-name="objectName" combo-value="objectId" combo-code="code"
+							 combo-search="caller.commonSearch"
+							 model-name="caller.objectsManagementCreate.parentName"
+							 model-id="caller.objectsManagementCreate.parentId">
+				</auto-search>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Đường dẫn</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="creater_objectUrl" required
+						   name="creater_objectUrl" ng-model="caller.objectsManagementCreate.objectUrl"
+						   data-required-msg="Đường dẫn chức năng không được để trống"
+						   data-inputMaxtextlength="300"  input-max-textLength
+						   data-inputMaxtextlength-msg="Không nhập quá 300 ký tự" object-htmlcheck
+						   obj-vietnamese-check/>
+						<span
+						data-for="creater_objectUrl" class="k-invalid-msg">
+						</span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label " translate>Thứ tự</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="creater_objectOrd"
+						   name="creater_objectOrd" ng-model="caller.objectsManagementCreate.ord" validate-number
+						   data-inputMaxtextlength="11"  input-max-textLength
+						   data-inputMaxtextlength-msg="Không nhập quá 11 ký tự" />
+					<span
+							data-for="creater_objectOrd" class="k-invalid-msg">
+					</span>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Loại chức năng</label>
+				<div class="col-md-8">
+					<select kendo-drop-down-list class="form-control" id="creater_objectType" k-options="caller.objectTypeIdSelectOptions"
+						style="width: 100%" name="creater_objectType" required data-required-msg="Loại chức năng bắt buộc chọn"
+						ng-model="caller.objectsManagementCreate.objectTypeId" >
+					</select>
+					<span
+						data-for="creater_objectType" class="k-invalid-msg"></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Mô tả</label>
+				<div class="col-md-8">
+						<textarea rows="4" cols="10" class=" form-control width100" type="text" id="creater_objectDescription"
+								  name="creater_objectDescription" ng-model="caller.objectsManagementCreate.description" object-htmlcheck-objcode
+								  data-inputMaxtextlength="1000"  input-max-textLength
+								  data-inputMaxtextlength-msg="Không nhập quá 1000 ký tự"
+								  object-htmlcheck/>
+					<span
+							data-for="creater_objectDescription" class="k-invalid-msg"></span>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Trạng thái</label>
+				<div class="col-md-8">
+					<select kendo-drop-down-list class="form-control" id="creater_objectStatus"
+							k-options="caller.statusSelectOptions"
+							style="width: 100%" name="creater_objectStatus" required data-required-msg="Trạng thái bắt buộc chọn"
+							ng-model="caller.objectsManagementCreate.status">
+					</select>
+					<span
+							data-for="creater_objectStatus" class="k-invalid-msg">
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="portlet light" align="right" style="text-align: center">
+			<button type="button"
+					class="btn btn-qlk padding-search-right saveQLK" ng-click="save()"
+					translate>Ghi lại
+			</button>
+			<button type="button"
+					class="btn btn-qlk padding-search-right closeQLK" ng-click="caller.cancelPopup()"
+					translate>Hủy bỏ
+			</button>
+		</div>
+	</div>
+</form>

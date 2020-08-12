@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.viettel.ktts2</groupId>
+  <artifactId>ktts-service</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20170522033049</lastUpdated>
+  </versioning>
+</metadata>

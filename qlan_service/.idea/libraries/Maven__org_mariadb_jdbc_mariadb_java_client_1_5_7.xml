@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.mariadb.jdbc:mariadb-java-client:1.5.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/org/mariadb/jdbc/mariadb-java-client/1.5.7/mariadb-java-client-1.5.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/org/mariadb/jdbc/mariadb-java-client/1.5.7/mariadb-java-client-1.5.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/org/mariadb/jdbc/mariadb-java-client/1.5.7/mariadb-java-client-1.5.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

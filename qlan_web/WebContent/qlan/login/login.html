@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+body {
+	margin: 0;
+	color: #6a6f8c;
+	background: #c8c8c8;
+	font: 600 16px/18px;
+}
+</style>
+
+<div class="login-wrap" ng-app="MetronicApp" id="login-form"
+	ng-controller="LoginController as vm" kendo-validator="vm.validator"
+	k-options="vm.validatorOptions">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
+			for="tab-1" class="tab">{{'login.form.title'|translate}}</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">{{'login.lbl.username'|translate}}</label> <input
+						class="input" type="text" required autofocus
+						data-required-msg="Tên đăng nhập không được để trống"
+						id="username" name="username" ng-model="vm.userLogin.username" />
+					<span data-for="username" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<label for="pass" class="label">{{'login.lbl.password'|translate}}</label> <input
+						class="input" type="password" 
+						
+						name="password" ng-model="vm.userLogin.password" /> <span
+						data-for="password" class="k-invalid-msg"></span>
+				</div>
+				<div class="group">
+					<input type="checkbox" name="remember" id="remember" class="custom" ng-model="vm.check"
+						checked="true" /> <label for="remember">{{'login.lbl.rememberme'|translate}}</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="{{vm.login}}" id="loginForm"
+						ng-click="vm.submit()" translate> <input type="button"
+						class="button" value="{{vm.reset}}"  ng-click="vm.clear()" translate>
+				</div>
+				
+				<div class="foot-lnk">
+					<a ng-click="vm.changePass()"
+						style="color: #f36a5a; margin: auto; text-align: center;">{{'login.link.changepass'|translate}}</a>
+				</div>
+				<!-- <div class="foot-lnk">
+					<div
+						style="position: absolute; bottom: -90px; width: 100%; text-align: center;">
+						<label style="color: white; font-weight: normal;">Táº­p Ä‘oÃ n
+							Viá»…n thÃ´ng QuÃ¢n Ä‘á»™i | PhÃ¡t triá»ƒn bá»Ÿi Trung tÃ¢m Pháº§n má»�m Viettel</label>
+					</div>
+				</div> -->
+			</div>
+
+		</div>
+	</div>
+</div>

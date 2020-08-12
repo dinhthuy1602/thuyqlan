@@ -1,0 +1,243 @@
+<form class="form-horizontal row" role="form" name="usersManagement"
+	id="usersManagement" kendo-validator="validator" k-options="validatorOptions">
+	<p></p>
+	<div class="portlet-title">
+		<div class="caption">
+			<span class="caption-subject bold lowercase" translate>Thông
+				tin chung</span>
+		</div>
+	</div>
+	<div class="portlet light bordered">
+		<p></p>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Tên đăng nhập</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text" required
+						data-required-msg="Tên đăng nhập không được để trống" ng-disabled="!caller.isCreateNew"
+						id="creater_userName" name="creater_userName" special-character-code
+						ng-model="caller.usersManagementCreate.userName" /> <span
+						data-for="creater_userName" class="k-invalid-msg"></span>
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Tên
+					đầy đủ</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text" required 
+						data-required-msg="Tên đầy đủ không được để trống" id="creater_fullName"
+						name="creater_fullName" ng-model="caller.usersManagementCreate.fullName" /> <span
+						data-for="creater_fullName" class="k-invalid-msg"></span>
+				</div>
+			</div>
+
+		</div>
+		<div class="clearfix"  ng-show="caller.isCreateNew">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Mật khẩu</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="password"  id="create_password" pass-word
+					ng-disabled="!caller.isCreateNew"
+						name="create_password" ng-model="caller.usersManagementCreate.password" /><span
+						data-for="create_password" class="k-invalid-msg"></span>
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Nhập lại mật khẩu</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="password"  id="create_passwordConfirm" 
+					pass-word-confirm new-pass="create_password" ng-disabled="!caller.isCreateNew"
+						name="create_passwordConfirm" ng-model="caller.usersManagementCreate.passwordConfirm" />
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Email</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="create_email" email required 
+						data-required-msg="Email không được để trống"
+						name="create_email" ng-model="caller.usersManagementCreate.email" /><span
+						data-for="create_email" class="k-invalid-msg"></span>
+				</div>
+			</div>
+			
+				<auto-search model-label="Phòng ban" caller="caller" 
+					
+						header-template="caller.headerTemplate" template-auto="caller.template"
+						page="1" page-size="20" popup-type="grid"
+						combo-id="usermanagement_create_dept"
+						combo-source-link="deptServiceRest/dept/getDeptForAutoComplete"
+						combo-name="deptName" combo-value="deptId" combo-code="code"
+						combo-search="caller.commonSearch" 
+						model-id="caller.usersManagementCreate.deptId"
+						model-name="caller.usersManagementCreate.deptName"> </auto-search>
+	
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Trạng thái</label>
+				<div class="col-md-8">
+					<select kendo-drop-down-list class="form-control" id="create_status" k-options="caller.statusSelectOptions"
+						style="width: 100%" name="create_status" required data-required-msg="Trạng thái không được để trống"
+						ng-model="caller.usersManagementCreate.status" >
+					</select> 
+					<span
+						data-for="create_status" class="k-invalid-msg"></span>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Số điện thoại</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="cteate_teFax" phone-number required data-required-msg="Số điện thoại không được để trống"
+						name="cteate_teFax" ng-model="caller.usersManagementCreate.teFax" />
+						<span
+						data-for="cteate_teFax" class="k-invalid-msg"></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Giới tính</label>
+				<div class="col-md-8">
+					<select kendo-drop-down-list class="form-control" id="cteate_gender" k-options="caller.genderSelectOptions"
+						style="width: 100%" name="cteate_gender" required data-required-msg="Giới tính không được để trống"
+						ng-model="caller.usersManagementCreate.gender" >
+					</select> 
+					<span
+						data-for="cteate_gender" class="k-invalid-msg"></span>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Ngày sinh</label>
+				<div class="col-md-8">
+					<input class="width100 form-control dates" kendo-date-picker date-diff-year
+						name="create_birthDate"  data-required-msg="Ngày sinh không được để trống" required
+						id="create_birthDate" format-date  data-date-msg="Ngày sinh không hợp lệ"
+						ng-model="caller.usersManagementCreate.dateOfBirth"
+						k-format="'dd/MM/yyyy'" /> <span
+						data-for='create_birthDate'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Nơi sinh</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="create_birthPlace"
+						name="create_birthPlace" ng-model="caller.usersManagementCreate.birthPlace" />
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Số CMT</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text" validate-number  id="create_identityCard" required data-required-msg="Số CMT không được để trống"
+						name="create_identityCard" ng-model="caller.usersManagementCreate.identityCard" />
+						<span
+						data-for="create_identityCard" class="k-invalid-msg"></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Ngày cấp CMT</label>
+				<div class="col-md-8">
+					<input class="width100 form-control dates" kendo-date-picker
+						name="create_issueDateIdent"  data-date-msg="Ngày cấp CMT không hợp lệ"
+						id="create_issueDateIdent" format-date date-now
+						data-k-ng-model="caller.usersManagementCreate.issueDateIdent"
+						k-format="'dd/MM/yyyy'" /> <span
+						data-for='create_issueDateIdent'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Nơi cấp</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="create_issuePlaceIdent"
+						name="create_issuePlaceIdent" ng-model="caller.usersManagementCreate.issuePlaceIdent" />
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Ngày hiệu lực</label>
+				<div class="col-md-8">
+					<input class="width100 form-control dates" kendo-date-picker lessdateField="create_validTo"
+						name="create_validFrom" data-lessdate-msg="Ngày hiệu lực không được lớn hơn ngày hết hiệu lực"
+						id="create_validFrom" format-date  data-date-msg="Ngày hiệu lực không hợp lệ"
+						data-k-ng-model="caller.usersManagementCreate.validFrom"
+						k-format="'dd/MM/yyyy'" /> <span
+						data-for='create_validFrom'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" translate>Ngày hết hiệu lực</label>
+				<div class="col-md-8">
+					<input class="width100 form-control dates" kendo-date-picker
+						name="create_validTo"  
+						id="create_validTo" format-date  data-date-msg="Ngày hết hiệu lực không hợp lệ"
+						greaterdateField="create_validFrom"
+						data-greaterdate-msg="Ngày hết hiệu lực không được nhỏ hơn ngày hiệu lực"
+						data-k-ng-model="caller.usersManagementCreate.validTo"
+						k-format="'dd/MM/yyyy'" /> <span
+						data-for='create_validTo'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label req" translate>Xác thực IP</label>
+				<div class="col-md-8">
+					<select kendo-drop-down-list class="form-control" id="create_checkIp" k-options="caller.checkIpSelectOptions"
+						style="width: 100%" name="create_checkIp" required data-required-msg="Xác thực IP không được để trống"
+						ng-model="caller.usersManagementCreate.checkIp" >
+					</select> 
+					<span
+						data-for='create_checkIp'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label class="col-md-4 control-label" id="create_ip_lb" translate>Địa chỉ IP</label>
+				<div class="col-md-8">
+					<input class=" form-control width100" type="text"  id="create_ip" data-required-msg="Địa chỉ ip không được để trống"
+						name="create_ip" ng-model="caller.usersManagementCreate.ip" ip-regex /><span
+						data-for='create_ip'
+						class='k-invalid-msg'></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix">
+		<div class="form-group col-md-12">
+			<div class="form-group col-md-12">
+				<label class="col-md-2 control-label" translate>Mô tả</label>
+				<div class="col-md-10">
+					<textarea rows="4" cols="10" class=" form-control width100" type="text" id="description"
+						name="description" ng-model="caller.usersManagementCreate.description" />
+				</div>
+			</div>	
+			</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="portlet light" align="right">
+		<button type="button"
+				class="btn btn-qlk padding-search-right saveQLK" ng-click="save()"
+				translate>Ghi lại</button>
+			<button type="button"
+				class="btn btn-qlk padding-search-right closeQLK" id="cancel"
+				ng-click="cancel()" translate>Hủy bỏ</button>
+			
+		</div>
+	</div>
+</form>

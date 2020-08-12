@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Aug 04 19:35:56 ICT 2020
+file\:///${project.parent.basedir}/ext-lib/.lastUpdated=1494481068830
+http\://repo.maven.apache.org/maven2/.lastUpdated=1481464996648
+https\://repo.maven.apache.org/maven2/.lastUpdated=1596544556124
+http\://repo.maven.apache.org/maven2/.error=
+../${project.parent.basedir}/ext-lib/.error=Could not transfer artifact com.oracle\:ojdbc6\:pom\:11.2.0.2.0 from/to local-maven-repo (../${project.parent.basedir}/ext-lib)\: Cannot access ../${project.parent.basedir}/ext-lib with type default using the available connector factories\: AetherRepositoryConnectorFactory, BasicRepositoryConnectorFactory
+@default-local-maven-repo-../${project.parent.basedir}/ext-lib/.lastUpdated=1494481217583
+https\://repo.maven.apache.org/maven2/.error=
+file\:///${project.parent.basedir}/ext-lib/.error=

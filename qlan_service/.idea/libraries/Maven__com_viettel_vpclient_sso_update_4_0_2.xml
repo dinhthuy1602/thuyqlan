@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.viettel:vpclient_sso_update:4.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/vpclient_sso_update/4.0.2/vpclient_sso_update-4.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/vpclient_sso_update/4.0.2/vpclient_sso_update-4.0.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../qlan-lib/vt_ktts_repo/com/viettel/vpclient_sso_update/4.0.2/vpclient_sso_update-4.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
